@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.dream.pureems.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_courseTableFragment"
+            app:destination="@id/courseTableFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/courseTableFragment"
+        android:name="com.dream.pureems.coursetable.CourseTableFragment"
+        android:label="CourseTableFragment"
+        tools:layout="@layout/fragment_course_table" />
+    <action
+        android:id="@+id/action_global_loginFragment"
+        app:destination="@id/loginFragment"
+        app:enterAnim="@anim/nav_default_enter_anim" />
+    <fragment
+        android:id="@+id/gradeTableFragment"
+        android:name="com.dream.pureems.gradetable.GradeTableFragment"
+        android:label="fragment_grade_table"
+        tools:layout="@layout/fragment_grade_table" />
+    <fragment
+        android:id="@+id/studentInfoFragment"
+        android:name="com.dream.pureems.studentinfo.StudentInfoFragment"
+        android:label="StudentInfoFragment" />
+</navigation>

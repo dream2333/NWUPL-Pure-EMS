@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="5dp"
+    android:layout_marginVertical="5dp"
+
+    app:cardCornerRadius="8dp"
+    app:cardElevation="0dp"
+    tools:layout_editor_absoluteX="112dp"
+    tools:layout_editor_absoluteY="29dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#A3E3F2FD"
+        android:paddingVertical="8dp">
+
+        <TextView
+            android:id="@+id/course_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="16dp"
+            android:text="TextView"
+            android:textColor="@color/ruri"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/grade_info"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/score"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/score"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="4dp"
+            android:gravity="center_horizontal|top"
+            android:textColor="@color/ruri"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="100" />
+
+        <TextView
+            android:id="@+id/course_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="TextView"
+            android:textColor="@color/ruri"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@+id/grade_info"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/grade_info" />
+
+        <TextView
+            android:id="@+id/grade_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textColor="@color/ruri"
+            android:textColorHighlight="#FFFFFF"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/course_name"
+            app:layout_constraintTop_toBottomOf="@+id/course_name" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

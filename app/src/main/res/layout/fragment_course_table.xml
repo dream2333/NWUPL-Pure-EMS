@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="courseTableViewModel"
+            type="com.dream.pureems.coursetable.CourseTableViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:id="@+id/courseTable"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/monthTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text='@{courseTableViewModel.currentDate[0]+"\n"+@string/mounth}'
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="@+id/weekTitle1"
+            app:layout_constraintEnd_toStartOf="@+id/guideline10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/weekTitle1"
+            tools:text="3\n月" />
+
+        <TextView
+            android:id="@+id/weekTitle6"
+            style="@style/courseTitleStyle"
+            android:text="@{courseTableViewModel.titleArray[5]}"
+            app:layout_constraintBottom_toBottomOf="@+id/weekTitle7"
+            app:layout_constraintEnd_toStartOf="@+id/weekTitle7"
+            app:layout_constraintStart_toEndOf="@+id/weekTitle5"
+            app:layout_constraintTop_toTopOf="@+id/weekTitle7"
+            tools:text="六\n6" />
+
+        <TextView
+            android:id="@+id/weekTitle1"
+            style="@style/courseTitleStyle"
+            android:text="@{courseTableViewModel.titleArray[0]}"
+            app:layout_constraintBottom_toBottomOf="@+id/weekTitle2"
+            app:layout_constraintEnd_toStartOf="@+id/weekTitle2"
+            app:layout_constraintStart_toStartOf="@+id/guideline10"
+            app:layout_constraintTop_toTopOf="@+id/weekTitle2"
+            tools:text="一\n1" />
+
+        <TextView
+            android:id="@+id/weekTitle2"
+            style="@style/courseTitleStyle"
+            android:text="@{courseTableViewModel.titleArray[1]}"
+            app:layout_constraintBottom_toBottomOf="@+id/weekTitle3"
+            app:layout_constraintEnd_toStartOf="@+id/weekTitle3"
+            app:layout_constraintStart_toEndOf="@+id/weekTitle1"
+            app:layout_constraintTop_toTopOf="@+id/weekTitle3"
+            tools:text="二\n2" />
+
+        <TextView
+            android:id="@+id/weekTitle4"
+            style="@style/courseTitleStyle"
+            android:text="@{courseTableViewModel.titleArray[3]}"
+            app:layout_constraintBottom_toBottomOf="@+id/weekTitle5"
+            app:layout_constraintEnd_toStartOf="@+id/weekTitle5"
+            app:layout_constraintStart_toEndOf="@+id/weekTitle3"
+            app:layout_constraintTop_toTopOf="@+id/weekTitle5"
+            tools:text="四\n4" />
+
+        <TextView
+            android:id="@+id/weekTitle7"
+            style="@style/courseTitleStyle"
+            android:layout_marginTop="16dp"
+            android:text="@{courseTableViewModel.titleArray[6]}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/weekTitle6"
+            app:layout_constraintTop_toBottomOf="@+id/textView9"
+            tools:text="日\n7" />
+
+        <TextView
+            android:id="@+id/weekTitle5"
+            style="@style/courseTitleStyle"
+            android:text="@{courseTableViewModel.titleArray[4]}"
+            app:layout_constraintBottom_toBottomOf="@+id/weekTitle6"
+            app:layout_constraintEnd_toStartOf="@+id/weekTitle6"
+            app:layout_constraintStart_toEndOf="@+id/weekTitle4"
+            app:layout_constraintTop_toTopOf="@+id/weekTitle6"
+            tools:text="五\n5" />
+
+        <TextView
+            android:id="@+id/weekTitle3"
+            style="@style/courseTitleStyle"
+            android:text="@{courseTableViewModel.titleArray[2]}"
+            app:layout_constraintBottom_toBottomOf="@+id/weekTitle4"
+            app:layout_constraintEnd_toStartOf="@+id/weekTitle4"
+            app:layout_constraintStart_toEndOf="@+id/weekTitle2"
+            app:layout_constraintTop_toTopOf="@+id/weekTitle4"
+            tools:text="三\n3" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="30dp" />
+
+        <ScrollView
+
+            android:id="@+id/courseContainer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/weekTitle7">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/course_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true">
+
+                <LinearLayout
+                    android:id="@+id/periodColumn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline9"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_height="700dp">
+
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/courseColumn0"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="2dp"
+                    android:animateLayoutChanges="true"
+                    app:layout_constraintEnd_toStartOf="@+id/courseColumn1"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/periodColumn"
+                    app:layout_constraintTop_toTopOf="@+id/courseColumn1"
+                    tools:layout_height="700dp">
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/courseColumn1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="2dp"
+                    android:animateLayoutChanges="true"
+                    app:layout_constraintEnd_toStartOf="@+id/courseColumn2"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/courseColumn0"
+                    app:layout_constraintTop_toTopOf="@+id/courseColumn2"
+                    tools:layout_height="700dp">
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/courseColumn2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="2dp"
+                    android:animateLayoutChanges="true"
+                    app:layout_constraintEnd_toStartOf="@+id/courseColumn3"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/courseColumn1"
+                    app:layout_constraintTop_toTopOf="@+id/courseColumn3"
+                    tools:layout_height="700dp">
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/courseColumn3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="2dp"
+                    android:animateLayoutChanges="true"
+                    app:layout_constraintEnd_toStartOf="@+id/courseColumn4"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/courseColumn2"
+                    app:layout_constraintTop_toTopOf="@+id/courseColumn4"
+                    tools:layout_height="700dp">
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/courseColumn4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="2dp"
+                    android:animateLayoutChanges="true"
+                    app:layout_constraintEnd_toStartOf="@+id/courseColumn5"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/courseColumn3"
+                    app:layout_constraintTop_toTopOf="@+id/courseColumn5"
+                    tools:layout_height="700dp">
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/courseColumn5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="2dp"
+                    android:animateLayoutChanges="true"
+                    app:layout_constraintEnd_toStartOf="@+id/courseColumn6"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/courseColumn4"
+                    app:layout_constraintTop_toTopOf="@+id/courseColumn6"
+                    tools:layout_height="700dp">
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/courseColumn6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="2dp"
+                    android:animateLayoutChanges="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/courseColumn5"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_height="700dp">
+
+                </FrameLayout>
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline9"
+                    android:layout_width="82dp"
+                    android:layout_height="115dp"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="30dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="52dp"
+            android:text="@{courseTableViewModel.time}"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/monthTitle"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="3月30日" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="第1周"
+            app:layout_constraintStart_toEndOf="@+id/monthTitle"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+        <ImageButton
+            android:id="@+id/drawerButton"
+            android:layout_width="23dp"
+            android:layout_height="43dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:paddingEnd="20dp"
+            android:src="@drawable/ic_menu_black_24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView8" />
+
+        <ImageButton
+            android:id="@+id/imageView13"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginEnd="12dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_add_circle_outline_black_24dp"
+            app:layout_constraintEnd_toStartOf="@+id/semesterImage"
+            app:layout_constraintTop_toTopOf="@+id/textView8" />
+
+        <ImageButton
+            android:id="@+id/imageView14"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginEnd="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_settings_black_24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView8" />
+
+        <Spinner
+            android:id="@+id/semesterImage"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginEnd="12dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:foreground="@drawable/ic_today_black_24dp"
+            android:spinnerMode="dialog"
+            app:layout_constraintEnd_toStartOf="@+id/imageView14"
+            app:layout_constraintTop_toTopOf="@+id/textView8" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

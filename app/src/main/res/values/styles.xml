@@ -1,0 +1,28 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light">
+        <item name="android:colorBackground">#FFFFFF</item>
+        <item name="android:textViewStyle">@style/textBlackStyle</item>
+    </style>
+
+    <style name="textBlackStyle">
+        <item name="android:colorForeground">#000000</item>
+    </style>
+
+    <style name="popwin_anim_style" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/pop_enter_anim</item>
+        <item name="android:windowExitAnimation">@anim/pop_exit_anim</item>
+    </style>
+
+    <style name="courseTitleStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal">2dp</item>
+        <item name="android:paddingVertical">2dp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="widget_card_height">
+        <item name="android:layout_height">50dp</item>
+    </style>
+</resources>

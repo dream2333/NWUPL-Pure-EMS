@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/deep_layer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/inputText2"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="24dp"
+                android:autofillHints="密码"
+                android:background="@drawable/rounded_edittext"
+                android:drawableStart="@drawable/ic_remove_red_eye_black_24dp"
+                android:drawablePadding="8dp"
+                android:hint="@string/password_hint"
+                android:enabled="@{!loginViewModel.requestInProgress}"
+                android:imeOptions="actionNext"
+                android:inputType="textPassword"
+                android:maxLength="32"
+                android:nextFocusForward="@id/inputText3"
+                android:paddingHorizontal="20dp"
+                android:text="@={loginViewModel.passwordText}"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/inputText1" />
+
+            <EditText
+                android:id="@+id/inputText1"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="52dp"
+                android:autofillHints="学号"
+                android:background="@drawable/rounded_edittext"
+                android:drawableStart="@drawable/ic_person_black_24dp"
+                android:drawablePadding="8dp"
+                android:enabled="@{!loginViewModel.requestInProgress}"
+                android:hint="@string/account_hint"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:nextFocusForward="@id/inputText2"
+                android:paddingHorizontal="20dp"
+                android:text="@={loginViewModel.accountText}"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+            <EditText
+                android:id="@+id/inputText3"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:autofillHints="@string/vcode_hint"
+                android:background="@drawable/rounded_edittext"
+                android:drawableStart="@drawable/ic_text_format_black_24dp"
+                android:drawablePadding="8dp"
+                android:hint="@string/vcode_hint"
+                android:enabled="@{!loginViewModel.requestInProgress}"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:maxLength="4"
+                android:paddingHorizontal="20dp"
+                android:text="@={loginViewModel.captchaText}"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/captchaImage"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/inputText2" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="36dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="36dp" />
+
+            <ImageView
+                android:id="@+id/captchaImage"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="4dp"
+                android:adjustViewBounds="false"
+                android:clickable="@{!loginViewModel.requestInProgress}"
+                android:contentDescription="@string/vcode_description"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:onClick="@{()-> loginViewModel.onCaptchaImageClicked()}"
+                android:scaleType="fitCenter"
+                app:bitmapImage="@{loginViewModel.bitmap}"
+                app:layout_constraintBottom_toBottomOf="@+id/inputText3"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintTop_toTopOf="@+id/inputText3"
+                app:layout_constraintWidth_percent="0.35"
+                app:srcCompat="@drawable/ic_remove_black_24dp" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="44dp"
+                android:enabled="@{(loginViewModel.passwordText.length()>=6)&amp;&amp;(loginViewModel.accountText.length()>=12)&amp;&amp;(loginViewModel.captchaText.length()==4)&amp;&amp;(loginViewModel.requestInProgress == false)}"
+                android:text="@string/login_button_text"
+                android:textSize="14sp"
+                app:cornerRadius="60dp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/inputText3" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="48dp"
+                android:text="@string/login_hint"
+                android:textColor="@android:color/black"
+                android:textSize="38sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="@+id/guideline12"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.11" />
+
+            <TextView
+                android:id="@+id/privacy_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/login_agreement_text"
+                android:textColor="?attr/scrimBackground"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <data>
+
+        <variable
+            name="loginViewModel"
+            type="com.dream.pureems.login.LoginViewModel" />
+    </data>
+
+
+</layout>
