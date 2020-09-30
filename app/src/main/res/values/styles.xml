@@ -1,8 +1,8 @@
 <resources>
 
     <style name="AppTheme" parent="Theme.MaterialComponents.Light">
-        <item name="android:colorBackground">#FFFFFF</item>
         <item name="android:textViewStyle">@style/textBlackStyle</item>
+
     </style>
 
     <style name="textBlackStyle">

@@ -150,28 +150,38 @@ object LoginUtils {
                     .cookies(emsCookies)
                     .execute()
             val jxdoc: JXDocument = JXDocument.create(res.body())
-            val temp = jxdoc.selN("//table[@id=\"studentInfoTb\"]/tbody/tr/td/allText()")
-            val info = listOf(
-                temp[2],
-                temp[4],
-                temp[10],
-                temp[11],
-                temp[12],
-                temp[19],
-                temp[20],
-                temp[21],
-                temp[22],
-                temp[32],
-                temp[33],
-                temp[38],
-                temp[39],
-                temp[26],
-                temp[27],
-                temp[28],
-                temp[29],
-                temp[40],
-                temp[41],
-            ).map {
+            val temp = jxdoc.sel("//table[@id=\"studentInfoTb\"]/tbody/tr/td/allText()")
+            temp.removeAt(0)//标题
+            temp.removeAt(4)//相片
+            temp.removeAt(12)//学制
+            temp.removeAt(12)
+            temp.removeAt(12)
+            temp.removeAt(12)
+            temp.removeAt(18)
+            temp.removeAt(18)//方向
+            temp.removeAt(26)//是否在籍在校
+            temp.removeAt(26)
+            temp.removeAt(26)
+            temp.removeAt(26)
+            temp.removeAt(32)//其他
+            temp.removeAt(32)
+            temp.removeAt(32)
+            temp.removeAt(32)
+            temp.removeAt(32)
+            temp.removeAt(32)
+            temp.removeAt(32)
+            temp.removeAt(32)
+            temp.removeAt(4)//英文名
+            temp.removeAt(4)
+            temp.removeAt(28)//学籍生效日期
+            temp.removeAt(28)
+            temp.removeAt(6)
+            temp.removeAt(6)
+            temp.removeAt(6)
+            temp.removeAt(6)
+            temp.removeAt(6)
+            temp.removeAt(6)
+            val info = temp.map {
                 it.toString().replace("：", "")
             }
             return Success(info)

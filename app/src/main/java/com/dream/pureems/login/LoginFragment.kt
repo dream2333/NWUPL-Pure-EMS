@@ -1,6 +1,5 @@
 package com.dream.pureems.login
 
-import android.app.AlertDialog.THEME_DEVICE_DEFAULT_LIGHT
 import android.content.Context
 import android.content.DialogInterface
 import android.os.Bundle
@@ -95,7 +94,7 @@ class LoginFragment : Fragment() {
     private fun privacyPolicy() {
         val text = resources.getText(R.string.privacyPolicy)
         val alterDiaglog: AlertDialog.Builder =
-            AlertDialog.Builder(requireContext(), THEME_DEVICE_DEFAULT_LIGHT)
+            AlertDialog.Builder(requireContext())
         alterDiaglog.setTitle("隐私协议1.0") //文字
         alterDiaglog.setMessage(text) //提示消息
         alterDiaglog.setPositiveButton(
@@ -114,7 +113,7 @@ class LoginFragment : Fragment() {
     private fun userAgreement() {
         val text = resources.getText(R.string.userAgreement)
         val alterDiaglog: AlertDialog.Builder =
-            AlertDialog.Builder(requireContext(), THEME_DEVICE_DEFAULT_LIGHT)
+            AlertDialog.Builder(requireContext())
         alterDiaglog.setTitle("用户协议1.0") //文字
         alterDiaglog.setMessage(text) //提示消息
         alterDiaglog.setPositiveButton(

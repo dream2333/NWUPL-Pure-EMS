@@ -48,29 +48,29 @@ class StudentInfoFragment : Fragment() {
         viewModel.info.observe(viewLifecycleOwner, {
             studentInfoSkeleton1.hide()
             studentInfoSkeleton2.hide()
-            binding.numberText.text = it[0]
-            binding.nameText.text = it[1]
-            if (it[2] == "男") {
+            binding.nameText.text = it[3]
+            binding.numberText.text = it[1]
+            if (it[5] == "男") {
                 binding.genderImage.setImageResource(R.drawable.ic_male)
             } else {
                 binding.genderImage.setImageResource(R.drawable.ic_female)
             }
-            binding.include1.findViewById<TextView>(R.id.title_text).text = it[3]
-            binding.include1.findViewById<TextView>(R.id.info_text).text = it[4]
-            binding.include2.findViewById<TextView>(R.id.title_text).text = it[5]
-            binding.include2.findViewById<TextView>(R.id.info_text).text = it[6]
-            binding.include3.findViewById<TextView>(R.id.title_text).text = it[7]
-            binding.include3.findViewById<TextView>(R.id.info_text).text = it[8]
-            binding.include4.findViewById<TextView>(R.id.title_text).text = it[9]
-            binding.include4.findViewById<TextView>(R.id.info_text).text = it[10]
-            binding.include5.findViewById<TextView>(R.id.title_text).text = it[11]
-            binding.include5.findViewById<TextView>(R.id.info_text).text = it[12]
-            binding.include6.findViewById<TextView>(R.id.title_text).text = it[13]
-            binding.include6.findViewById<TextView>(R.id.info_text).text = it[14]
-            binding.include7.findViewById<TextView>(R.id.title_text).text = it[15]
-            binding.include7.findViewById<TextView>(R.id.info_text).text = it[16]
-            binding.include8.findViewById<TextView>(R.id.title_text).text = it[17]
-            binding.include8.findViewById<TextView>(R.id.info_text).text = it[18]
+            binding.include1.findViewById<TextView>(R.id.title_text).text = it[6]
+            binding.include1.findViewById<TextView>(R.id.info_text).text = it[7]
+            binding.include2.findViewById<TextView>(R.id.title_text).text = it[8]
+            binding.include2.findViewById<TextView>(R.id.info_text).text = it[9]
+            binding.include3.findViewById<TextView>(R.id.title_text).text = it[10]
+            binding.include3.findViewById<TextView>(R.id.info_text).text = it[11]
+            binding.include4.findViewById<TextView>(R.id.title_text).text = it[12]
+            binding.include4.findViewById<TextView>(R.id.info_text).text = it[13]
+            binding.include5.findViewById<TextView>(R.id.title_text).text = it[14]
+            binding.include5.findViewById<TextView>(R.id.info_text).text = it[15]
+            binding.include6.findViewById<TextView>(R.id.title_text).text = it[16]
+            binding.include6.findViewById<TextView>(R.id.info_text).text = it[17]
+            binding.include7.findViewById<TextView>(R.id.title_text).text = it[18]
+            binding.include7.findViewById<TextView>(R.id.info_text).text = it[19]
+            binding.include8.findViewById<TextView>(R.id.title_text).text = it[20]
+            binding.include8.findViewById<TextView>(R.id.info_text).text = it[21]
         })
         viewModel.snackMessage.observe(viewLifecycleOwner, {
             Snackbar.make(requireActivity().findViewById(R.id.rootView), it, Snackbar.LENGTH_LONG)

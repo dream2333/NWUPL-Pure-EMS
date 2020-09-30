@@ -118,7 +118,7 @@
                 android:enabled="@{(loginViewModel.passwordText.length()>=6)&amp;&amp;(loginViewModel.accountText.length()>=12)&amp;&amp;(loginViewModel.captchaText.length()==4)&amp;&amp;(loginViewModel.requestInProgress == false)}"
                 android:text="@string/login_button_text"
                 android:textSize="14sp"
-                app:cornerRadius="60dp"
+                app:cornerRadius="30dp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/guideline"
