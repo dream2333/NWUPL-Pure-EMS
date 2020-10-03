@@ -6,8 +6,7 @@
     android:orientation="vertical"
     android:paddingStart="25dp"
     android:paddingTop="33dp"
-    android:paddingBottom="25dp"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+    android:paddingBottom="25dp">
 
     <ImageView
         android:id="@+id/imageView6"

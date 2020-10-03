@@ -6,4 +6,4 @@
     android:previewImage="@drawable/ic_icon"
     android:updatePeriodMillis="864000"
     android:resizeMode="horizontal|vertical"
-    android:widgetCategory="home_screen"></appwidget-provider>
+    android:widgetCategory="home_screen" />
