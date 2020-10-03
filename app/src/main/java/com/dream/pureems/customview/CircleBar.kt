@@ -13,6 +13,7 @@ import com.dream.pureems.R
 import java.text.DecimalFormat
 import kotlin.math.abs
 import kotlin.math.roundToInt
+import com.dream.pureems.ViewUtils.dp2px
 
 class CircleBar @JvmOverloads constructor(
     private val mContext: Context,
@@ -186,8 +187,5 @@ class CircleBar @JvmOverloads constructor(
         initPaint()
     }
 
-    private fun dp2px(context: Context, dpValue: Float): Int {
-        val scale = context.resources.displayMetrics.density
-        return (dpValue * scale + 0.5f).toInt()
-    }
+
 }

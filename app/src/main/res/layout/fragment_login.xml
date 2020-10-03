@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -110,17 +111,19 @@
                 app:layout_constraintWidth_percent="0.35"
                 app:srcCompat="@drawable/ic_remove_black_24dp" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/button2"
                 android:layout_width="0dp"
                 android:layout_height="64dp"
                 android:layout_marginTop="44dp"
                 android:enabled="@{(loginViewModel.passwordText.length()>=6)&amp;&amp;(loginViewModel.accountText.length()>=12)&amp;&amp;(loginViewModel.captchaText.length()==4)&amp;&amp;(loginViewModel.requestInProgress == false)}"
                 android:text="@string/login_button_text"
+                android:textAlignment="gravity"
                 android:textSize="14sp"
                 app:cornerRadius="30dp"
+                app:iconGravity="textStart"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
-                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/guideline"
                 app:layout_constraintTop_toBottomOf="@+id/inputText3" />
 

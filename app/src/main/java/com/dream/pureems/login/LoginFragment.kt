@@ -16,9 +16,15 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import androidx.transition.TransitionInflater
 import com.dream.pureems.R
+import com.dream.pureems.ViewUtils.dp2px
 import com.dream.pureems.database.AppDataBase
 import com.dream.pureems.databinding.FragmentLoginBinding
 import com.ethanhua.skeleton.Skeleton
+import com.google.android.material.internal.ViewUtils
+import com.google.android.material.progressindicator.CircularDrawingDelegate
+import com.google.android.material.progressindicator.CircularIndeterminateAnimatorDelegate
+import com.google.android.material.progressindicator.IndeterminateDrawable
+import com.google.android.material.progressindicator.ProgressIndicatorSpec
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -75,6 +81,7 @@ class LoginFragment : Fragment() {
                 captchaSkeleton.hide()
             }
         }
+
         return binding.root
     }
 
