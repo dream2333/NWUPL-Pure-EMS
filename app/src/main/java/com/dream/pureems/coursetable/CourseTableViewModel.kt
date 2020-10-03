@@ -21,6 +21,7 @@ class CourseTableViewModel(application: Application) :
     val semesterId = MutableLiveData<String>()
     var snackMessage = MutableLiveData<String>()
     var time = currentDate[0].toString() + "月" + currentDate[1] + "日"
+    var teachingWeek = MutableLiveData("")
 
     init {
         viewModelScope.launch(Dispatchers.IO) {
@@ -34,6 +35,8 @@ class CourseTableViewModel(application: Application) :
                 is ErrorMessage -> show(semesterResult.msg)
             }
             //获取学期表
+            teachingWeek.postValue("第" + repository.teachingWeek + "教学周")
+            //教学周
         }
 
         semesterId.observeForever {

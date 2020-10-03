@@ -82,6 +82,7 @@ class GradeTableFragment : Fragment(), AdapterView.OnItemSelectedListener {
                 }
             }
             binding.chartView.data = BarData(barDataSet)
+            binding.chartView.setNoDataText("统计中……")
             binding.chartView.invalidate()
         })
 

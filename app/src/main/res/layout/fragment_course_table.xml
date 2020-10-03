@@ -263,7 +263,8 @@
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="第1周"
+            android:text="@{courseTableViewModel.teachingWeek}"
+            tools:text="第1教学周"
             app:layout_constraintStart_toEndOf="@+id/monthTitle"
             app:layout_constraintTop_toBottomOf="@+id/textView8" />
 

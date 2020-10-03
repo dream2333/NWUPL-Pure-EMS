@@ -21,19 +21,29 @@ class CourseTableRepository(private val courseDao: CourseDao) {
     private val tableBarUrl = "http://tam.nwupl.edu.cn/eams/courseTableForStd.action"
     private val tableUrl = "http://tam.nwupl.edu.cn/eams/courseTableForStd!courseTable.action"
     private val queryUrl = "http://tam.nwupl.edu.cn/eams/dataQuery.action"
+    private val mainUrl = "http://tam.nwupl.edu.cn/eams/homeExt!main.action"
     private var timeout = 5000
-    var semesterId = ""
+    private var semesterId = ""
+    var teachingWeek = 1
     private var ids = ""
     private var tagId = ""
 
-    //初始化ids、tagId、semesterId
+
     fun initialize(emsCookies: Map<String, String>): Result<String> {
         try {
+            //初始化ids、tagId、semesterId
             var res = Jsoup.connect(tableBarUrl).cookies(emsCookies).timeout(timeout)
                 .method(Connection.Method.GET).execute()
             ids = Regex("""(?<=form,"ids",")\d+""").find(res.body())!!.value
             tagId = Regex("""semesterBar\d+Semester""").find(res.body())!!.value
             semesterId = res.cookie("semester.id")
+
+            //初始化教学周
+            res = Jsoup.connect(mainUrl).cookies(emsCookies).timeout(timeout)
+                .method(Connection.Method.GET).execute()
+            var jxdoc = JXDocument.create(res.body())
+            teachingWeek =
+                jxdoc.selOne("//div[@class=\"title\"]/strong/allText()").toString().toInt()
             return Success("初始化成功")
         } catch (e: Exception) {
             return ErrorMessage("初始化课表失败\n" + e.localizedMessage)
