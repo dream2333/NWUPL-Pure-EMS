@@ -193,8 +193,9 @@ class CourseTableFragment : Fragment(), AdapterView.OnItemSelectedListener {
         )
         detailPop.animationStyle = R.style.popwin_anim_style
         //弹出的课程消息
-
-        val colors = resources.getIntArray(R.array.customizedColors)
+        val colorIterator = getColorIterator()
+        val courseColorMap = mutableMapOf<String, Int>()
+        //颜色控制，确保同课程名颜色相同
         courseList.forEach { course ->
             val column = course.day
             val row = course.start
@@ -206,10 +207,24 @@ class CourseTableFragment : Fragment(), AdapterView.OnItemSelectedListener {
                 height = (cardHeight) * course.length
             }
             day[column].addView(lessonCardView, params)
+            //课程卡片布局信息
+            val color: Int
+            if (!courseColorMap.containsKey(course.courseName)) {
+                color = colorIterator.next()//获取颜色
+                courseColorMap[course.courseName] = color
+            } else {
+                color = courseColorMap[course.courseName]!!
+            }
             lessonCardView.lessonCard.backgroundTintList =
-                ColorStateList.valueOf(colors[(0..colors.lastIndex).random()])
+                ColorStateList.valueOf(color)
+            //颜色控制，确保同课程名颜色相同
             lessonCardView.lessonCard.text = course.courseName + "\n@" + course.location
             lessonCardView.lessonCard.typeface = Typeface.DEFAULT_BOLD
+            val week = viewModel.repository.teachingWeek
+            if (week > course.weeks.length || course.weeks[week - 1] == '0') {
+                lessonCardView.lessonCard.background.alpha = 60
+            }
+            //课程卡片属性
             lessonCardView.setOnClickListener { card ->
                 detailPop.contentView.card.teacherName.text = course.teachersName
                 detailPop.contentView.card.courseName.text = course.courseName
@@ -281,6 +296,16 @@ class CourseTableFragment : Fragment(), AdapterView.OnItemSelectedListener {
     private fun clearColumn() {
         day.forEach {
             it.removeAllViews()
+        }
+    }
+
+
+    private fun getColorIterator() = iterator {
+        val colors = resources.getIntArray(R.array.customizedColors)
+        var cur = 0
+        while (true) {
+            yield(colors[cur])
+            cur = (cur + 1) % colors.size
         }
     }
 }

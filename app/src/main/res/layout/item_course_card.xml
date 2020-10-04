@@ -9,12 +9,12 @@
     android:gravity="center"
     android:paddingHorizontal="2dp"
     android:paddingVertical="6dp"
+    android:text="课程名"
     android:textColor="@color/cardview_light_background"
     android:textSize="12sp"
     android:textStyle="bold"
     tools:layout_editor_absoluteX="27dp"
-    tools:layout_editor_absoluteY="202dp"
-    android:text="课程名">
+    tools:layout_editor_absoluteY="202dp">
 
 
 </TextView>

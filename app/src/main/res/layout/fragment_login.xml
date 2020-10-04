@@ -12,6 +12,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.1"
+                android:background="@drawable/card_shape"
+                android:backgroundTint="#C84D4D"
+                android:text="TextView"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="133dp" />
+
             <EditText
                 android:id="@+id/inputText2"
                 android:layout_width="0dp"
@@ -158,6 +169,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/button2" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <data>
