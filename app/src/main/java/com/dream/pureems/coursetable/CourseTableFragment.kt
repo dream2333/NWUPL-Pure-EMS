@@ -218,7 +218,7 @@ class CourseTableFragment : Fragment(), AdapterView.OnItemSelectedListener {
             lessonCardView.lessonCard.backgroundTintList =
                 ColorStateList.valueOf(color)
             //颜色控制，确保同课程名颜色相同
-            lessonCardView.lessonCard.text = course.courseName + "\n@" + course.location
+            lessonCardView.lessonCard.text = course.courseName + "\n*" + course.location
             lessonCardView.lessonCard.typeface = Typeface.DEFAULT_BOLD
             val week = viewModel.repository.teachingWeek
             if (week > course.weeks.length || course.weeks[week - 1] == '0') {
