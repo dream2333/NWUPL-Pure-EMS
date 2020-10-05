@@ -34,9 +34,6 @@ class MainActivity : AppCompatActivity() {
         //导航控制
         supportActionBar?.hide()
         setStatusBarTrans()
-        val trans = supportFragmentManager.beginTransaction()
-        trans.setCustomAnimations(R.anim.pop_enter_anim, R.anim.pop_exit_anim)
-        trans.commit()
     }
 
     private fun setStatusBarTrans() {
