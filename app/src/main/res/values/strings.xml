@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">西法大教务</string>
+    <string name="app_name">轻教务</string>
     <string name="account_hint">请输入学号</string>
     <string name="password_hint">请输入密码</string>
     <string name="vcode_hint">验证码</string>

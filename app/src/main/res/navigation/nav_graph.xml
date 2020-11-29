@@ -6,7 +6,7 @@
     app:startDestination="@id/loginFragment">
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.dream.pureems.login.LoginFragment"
+        android:name="com.dream.nwuplems.login.LoginFragment"
         android:label="LoginFragment"
         tools:layout="@layout/fragment_login">
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/courseTableFragment"
-        android:name="com.dream.pureems.coursetable.CourseTableFragment"
+        android:name="com.dream.nwuplems.coursetable.CourseTableFragment"
         android:label="CourseTableFragment"
         tools:layout="@layout/fragment_course_table" />
     <action
@@ -28,11 +28,11 @@
         app:enterAnim="@anim/nav_default_enter_anim" />
     <fragment
         android:id="@+id/gradeTableFragment"
-        android:name="com.dream.pureems.gradetable.GradeTableFragment"
+        android:name="com.dream.nwuplems.gradetable.GradeTableFragment"
         android:label="fragment_grade_table"
         tools:layout="@layout/fragment_grade_table" />
     <fragment
         android:id="@+id/studentInfoFragment"
-        android:name="com.dream.pureems.studentinfo.StudentInfoFragment"
+        android:name="com.dream.nwuplems.studentinfo.StudentInfoFragment"
         android:label="StudentInfoFragment" />
 </navigation>

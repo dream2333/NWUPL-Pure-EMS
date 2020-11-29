@@ -165,7 +165,7 @@
 
         <variable
             name="loginViewModel"
-            type="com.dream.pureems.login.LoginViewModel" />
+            type="com.dream.nwuplems.login.LoginViewModel" />
     </data>
 
 

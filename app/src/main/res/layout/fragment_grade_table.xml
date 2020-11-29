@@ -6,7 +6,7 @@
 
         <variable
             name="gradeTableViewModel"
-            type="com.dream.pureems.gradetable.GradeTableViewModel" />
+            type="com.dream.nwuplems.gradetable.GradeTableViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -99,7 +99,7 @@
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="16dp">
 
-                    <com.dream.pureems.customview.CircleBar
+                    <com.dream.nwuplems.customview.CircleBar
 
                         android:id="@+id/score_bar"
                         android:layout_width="wrap_content"
@@ -187,7 +187,7 @@
                         app:layout_constraintStart_toEndOf="@+id/grade_bar"
                         app:layout_constraintTop_toTopOf="@+id/grade_bar" />
 
-                    <com.dream.pureems.customview.CircleBar
+                    <com.dream.nwuplems.customview.CircleBar
                         android:id="@+id/grade_bar"
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"

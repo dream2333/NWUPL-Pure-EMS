@@ -7,7 +7,7 @@
 
         <variable
             name="gradeTableViewModel"
-            type="com.dream.pureems.studentinfo.StudentInfoViewModel" />
+            type="com.dream.nwuplems.studentinfo.StudentInfoViewModel" />
 
     </data>
 

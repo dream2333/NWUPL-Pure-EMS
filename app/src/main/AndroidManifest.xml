@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.dream.pureems">
+    package="com.dream.nwuplems">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:icon="@drawable/ic_icon"
+        android:icon="@drawable/ic_appicon_book"
         android:label="@string/app_name"
         android:roundIcon="@drawable/ic_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         android:allowBackup="false">
-        <activity android:name="com.dream.pureems.MainActivity">
+        <activity android:name="com.dream.nwuplems.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -22,7 +22,7 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-        <receiver android:name=".widgets.CourseWidgetProvider">
+        <receiver android:name="com.dream.nwuplems.widgets.CourseWidgetProvider">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -31,7 +31,7 @@
                 android:resource="@xml/course_widget" />
         </receiver>
         <service
-            android:name=".widgets.UpdateService"
+            android:name="com.dream.nwuplems.widgets.UpdateService"
             android:permission="android.permission.BIND_REMOTEVIEWS" />
     </application>
     <!--广播接收参数-->
