@@ -1,8 +1,8 @@
 # NWUPL_Pure_EMS 政法轻教务
 
-[![License: GPLv3+](https://img.shields.io/badge/License-GPLv3%2B-blue)](https://www.gnu.org/licenses/gpl-3.0.html)
+[![License: GPLv3+](https://img.shields.io/badge/License-GPLv3%2B-blue)](https://www.gnu.org/licenses/gpl-3.0.html) 
 
-
+[蓝奏云下载地址](https://github.com/dream2333/NWUPL_Pure_EMS/releases/download/v0.2.5/app-release.apk "下载地址") /[github下载地址](https://github.com/dream2333/NWUPL_Pure_EMS/releases/download/v0.2.5/app-release.apk "下载地址") / [release](https://github.com/dream2333/NWUPL_Pure_EMS/releases "下载地址")
 个人开发的一款西北政法大学教务平台客户端，遵循Material Design标准，使用kotlin+jetpack+mvvm架构，查询流量消耗为网页端的1/20。可以使用西北政法大学教务端学号及密码进行登录，能够替代西北政法大学网页端教务平台的部分功能，实现教务的便捷查询。
 
 
@@ -24,7 +24,11 @@
 - [Art of Readme](https://github.com/noffle/art-of-readme) — 💌 写高质量 README 的艺术。
 
 ## 未来功能
-
+- 情侣课程表
+- 选课系统
+- 教师评价
+- 学分认定
+- 教学计划查看
 
 ## 维护者
 
