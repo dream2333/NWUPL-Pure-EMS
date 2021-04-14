@@ -14,7 +14,7 @@
 - 学籍信息查询
 - 桌面课程表部件
 
-<img src="https://www.hualigs.cn/image/6076bca0e38f3.jpg" height="330" />   <img src="https://www.hualigs.cn/image/6076bca16a76e.jpg" height="330" />  <img src="https://www.hualigs.cn/image/6076bca0aaf2f.jpg" height="330"  />   <img src="https://www.hualigs.cn/image/6076bca05e87d.jpg" height="330"  />  <img src="https://www.hualigs.cn/image/6076bca38517b.jpg" height="330"  /> 
+<img src="https://www.hualigs.cn/image/6076c0de0981d.jpg" height="330" />   <img src="https://www.hualigs.cn/image/6076c0de96773.jpg" height="330" />  <img src="https://www.hualigs.cn/image/6076c0de52283.jpg" height="330"  />   <img src="https://www.hualigs.cn/image/6076c0dcb5c37.jpg" height="330"  />  <img src="https://www.hualigs.cn/image/6076bca38517b.jpg" height="330"  /> 
 
 
 ## 相关仓库
@@ -23,7 +23,7 @@
 - [ScheduleX](https://github.com/Surine/ScheduleX) — 遵循MaterialDesign的开源课程表
 - [Art of Readme](https://github.com/noffle/art-of-readme) — 💌 写高质量 README 的艺术。
 
-## 已实现功能
+## 未来功能
 
 
 ## 维护者
