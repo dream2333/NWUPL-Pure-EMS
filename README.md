@@ -1,6 +1,6 @@
 # NWUPL_Pure_EMS 政法轻教务
 
-[![License: GPLv3+](https://img.shields.io/badge/License-GPLv3%2B-blue)](https://www.gnu.org/licenses/gpl-3.0.html) 
+[![License: GPLv3+](https://img.shields.io/badge/License-GPLv3%2B-blue)](https://www.gnu.org/licenses/gpl-3.0.html)  ![GitHub Release Date](https://img.shields.io/github/release-date/dream2333/NWUPL_Pure_EMS) 
 
 [蓝奏云下载地址](https://github.com/dream2333/NWUPL_Pure_EMS/releases/download/v0.2.5/app-release.apk "下载地址") /[github下载地址](https://github.com/dream2333/NWUPL_Pure_EMS/releases/download/v0.2.5/app-release.apk "下载地址") / [release](https://github.com/dream2333/NWUPL_Pure_EMS/releases "下载地址")
 个人开发的一款西北政法大学教务平台客户端，遵循Material Design标准，使用kotlin+jetpack+mvvm架构，查询流量消耗为网页端的1/20。可以使用西北政法大学教务端学号及密码进行登录，能够替代西北政法大学网页端教务平台的部分功能，实现教务的便捷查询。
@@ -8,8 +8,8 @@
 
 ## 已实现功能
 
--  cas单点登录
--  学年课程表查询删除
+- cas单点登录
+- 学年课程表查询删除
 - 学年成绩、绩点查询查询
 - 学籍信息查询
 - 桌面课程表部件
