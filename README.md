@@ -17,20 +17,6 @@
 
 <img src="https://www.hualigs.cn/image/6076c0de0981d.jpg" height="330" />   <img src="https://www.hualigs.cn/image/6076c0de96773.jpg" height="330" />  <img src="https://www.hualigs.cn/image/6076c0de52283.jpg" height="330"  />   <img src="https://www.hualigs.cn/image/6076c0dcb5c37.jpg" height="330"  />  <img src="https://www.hualigs.cn/image/6076bca38517b.jpg" height="330"  /> 
 
-
-## 相关仓库
-
-- [Jetpack-MVVM-Best-Practice](https://github.com/KunMinX/Jetpack-MVVM-Best-Practice) — 难得一见的 Jetpack MVVM 最佳实践
-- [ScheduleX](https://github.com/Surine/ScheduleX) — 遵循MaterialDesign的开源课程表
-- [Art of Readme](https://github.com/noffle/art-of-readme) — 💌 写高质量 README 的艺术。
-
-## 未来功能
-- 情侣课程表
-- 选课系统
-- 教师评价
-- 学分认定
-- 教学计划查看
-
 ## 登录请求流程
 
 [教务接口说明](https://github.com/dream2333/NWUPL_Pure_EMS/blob/master/%E6%8E%A5%E5%8F%A3.md "接口文档") 
@@ -52,6 +38,19 @@
 - 请求接口/eams/homeExt.action
 
 - 需要返回内容：1.cookies 2.form 3.bitmap（验证码）
+
+## 相关仓库
+
+- [Jetpack-MVVM-Best-Practice](https://github.com/KunMinX/Jetpack-MVVM-Best-Practice) — 难得一见的 Jetpack MVVM 最佳实践
+- [ScheduleX](https://github.com/Surine/ScheduleX) — 遵循MaterialDesign的开源课程表
+- [Art of Readme](https://github.com/noffle/art-of-readme) — 💌 写高质量 README 的艺术。
+
+## 未来功能
+- 情侣课程表
+- 选课系统
+- 教师评价
+- 学分认定
+- 教学计划查看
 
 ## 维护者
 
