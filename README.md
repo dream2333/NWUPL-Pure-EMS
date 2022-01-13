@@ -18,7 +18,7 @@
 
 <img src="https://www.hualigs.cn/image/6076c0de0981d.jpg" height="330" />   <img src="https://www.hualigs.cn/image/6076c0de96773.jpg" height="330" />  <img src="https://www.hualigs.cn/image/6076c0de52283.jpg" height="330"  />   <img src="https://www.hualigs.cn/image/6076c0dcb5c37.jpg" height="330"  />  <img src="https://www.hualigs.cn/image/6076bca38517b.jpg" height="330"  /> 
 
-## 登录请求流程
+## 数维登录请求流程
 
 [教务接口说明](https://github.com/dream2333/NWUPL_Pure_EMS/blob/master/%E6%8E%A5%E5%8F%A3.md "接口文档") 
 
