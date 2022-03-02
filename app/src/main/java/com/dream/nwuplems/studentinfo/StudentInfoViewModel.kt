@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.dream.nwuplems.data.ErrorMessage
 import com.dream.nwuplems.data.Success
-import com.dream.nwuplems.login.LoginUtils.getStudentInfo
+import com.dream.nwuplems.login.LoginUtilsNew.getStudentInfo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

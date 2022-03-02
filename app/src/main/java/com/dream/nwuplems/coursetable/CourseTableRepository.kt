@@ -9,9 +9,9 @@ import com.dream.nwuplems.data.ErrorMessage
 import com.dream.nwuplems.data.Success
 import com.dream.nwuplems.database.Course
 import com.dream.nwuplems.database.CourseDao
-import com.dream.nwuplems.login.LoginUtils
 import com.dream.nwuplems.data.Result
 import com.dream.nwuplems.data.Semester
+import com.dream.nwuplems.login.LoginUtilsNew
 import org.jsoup.Connection
 import org.jsoup.Jsoup
 import org.seimicrawler.xpath.JXDocument
@@ -53,9 +53,9 @@ class CourseTableRepository(private val courseDao: CourseDao) {
     suspend fun updateAllCourses(vararg semester: String): Result<MutableList<Course>> {
         //更新课表
         var result = if (semester.isEmpty()) {
-            getCourseList(LoginUtils.emsCookies)
+            getCourseList(LoginUtilsNew.emsCookies)
         } else {
-            getCourseList(LoginUtils.emsCookies, semester[0])
+            getCourseList(LoginUtilsNew.emsCookies, semester[0])
         }//有指定学期则获取学期
         when (result) {
             is Success -> {
@@ -70,7 +70,7 @@ class CourseTableRepository(private val courseDao: CourseDao) {
     }
 
     fun getAllSemester(): Result<MutableList<Semester>> {
-        return getSemesterList(LoginUtils.emsCookies)
+        return getSemesterList(LoginUtilsNew.emsCookies)
     }
 
     suspend fun insert(course: Course) {

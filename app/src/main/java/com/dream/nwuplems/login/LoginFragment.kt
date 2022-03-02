@@ -24,20 +24,30 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class LoginFragment : Fragment() {
+
     private val viewModel: LoginViewModel by activityViewModels()
     private lateinit var binding: FragmentLoginBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
         binding.loginViewModel = viewModel
         binding.lifecycleOwner = this
-        viewModel.snackMessage.observe(viewLifecycleOwner, {
+        viewModel.snackMessage.observe(viewLifecycleOwner) {
             Snackbar.make(requireActivity().findViewById(R.id.rootView), it, Snackbar.LENGTH_LONG)
                 .show()
-        })
+        }
+        viewModel.loginRetrys.observe(viewLifecycleOwner) {
+            if (it >= 2) {
+                binding.inputText3.visibility = View.VISIBLE
+                binding.captchaImage.visibility = View.VISIBLE
+            } else {
+                binding.captchaImage.visibility = View.GONE
+                binding.captchaImage.visibility = View.GONE
+            }
+        }
         viewModel.emsCookies.observe(viewLifecycleOwner) {
             //登录成功
             if (!checkAccount()) {
@@ -49,9 +59,9 @@ class LoginFragment : Fragment() {
             }
             saveAccount()
             requireActivity().findViewById<TextView>(R.id.studentDrawerName).text =
-                LoginUtils.studentName
+                LoginUtilsNew.studentName
             requireActivity().findViewById<TextView>(R.id.studentDrawerID).text =
-                LoginUtils.studentID
+                LoginUtilsNew.studentID
             val action = LoginFragmentDirections.actionLoginFragmentToCourseTableFragment()
 
             val transInflater = TransitionInflater.from(requireContext())
@@ -158,8 +168,10 @@ class LoginFragment : Fragment() {
         val sharedPreferences =
             requireActivity().getSharedPreferences("data", Context.MODE_PRIVATE)
         val lastLogAccount = sharedPreferences.getString("accountNumber", "")
-        Log.i("上次登录", lastLogAccount)
-        Log.i("本次登录", viewModel.accountText.value)
+        if (lastLogAccount != null) {
+            Log.i("上次登录", lastLogAccount)
+        }
+        viewModel.accountText.value?.let { Log.i("本次登录", it) }
         return lastLogAccount == viewModel.accountText.value
     }
 

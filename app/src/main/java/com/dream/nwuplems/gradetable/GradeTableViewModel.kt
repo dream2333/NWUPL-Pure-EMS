@@ -10,7 +10,7 @@ import com.dream.nwuplems.data.Success
 import com.dream.nwuplems.database.AppDataBase
 import com.dream.nwuplems.database.Grade
 import com.dream.nwuplems.database.GradeInfo
-import com.dream.nwuplems.login.LoginUtils
+import com.dream.nwuplems.login.LoginUtilsNew
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -25,7 +25,7 @@ class GradeTableViewModel(application: Application) :
     init {
         viewModelScope.launch(Dispatchers.IO) {
             if (dao.count() == 0) {
-                when (val grades = LoginUtils.getGrade()) {
+                when (val grades = LoginUtilsNew.getGrade()) {
                     is Success -> {
                         dao.insert(grades.data)
                         allGradeInfo.postValue(dao.getAllGradeInfo())

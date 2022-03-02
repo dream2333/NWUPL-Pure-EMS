@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.dream.nwuplems.data.*
 import com.dream.nwuplems.database.AppDataBase
-import com.dream.nwuplems.login.LoginUtils
+import com.dream.nwuplems.login.LoginUtilsNew
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.util.*
@@ -25,7 +25,7 @@ class CourseTableViewModel(application: Application) :
 
     init {
         viewModelScope.launch(Dispatchers.IO) {
-            repository.initialize(LoginUtils.emsCookies)
+            repository.initialize(LoginUtilsNew.emsCookies)
             if (repository.isEmpty()) {
                 repository.updateAllCourses()
             }
