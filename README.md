@@ -1,12 +1,14 @@
 # NWUPL_Pure_EMS 政法轻教务
 
-[![License: GPLv3+](https://img.shields.io/badge/License-GPLv3%2B-blue)](https://www.gnu.org/licenses/gpl-3.0.html)  ![GitHub Release Date](https://img.shields.io/github/release-date/dream2333/NWUPL_Pure_EMS) 
+[![License: GPLv3+](https://img.shields.io/badge/License-GPLv3%2B-blue)](https://www.gnu.org/licenses/gpl-3.0.html)  ![GitHub Release Date](https://img.shields.io/github/release-date/dream2333/NWUPL_Pure_EMS)
 
 [蓝奏云下载地址](https://www.lanzouw.com/iB61xo1uhah "下载地址") / [github下载地址](https://github.com/dream2333/NWUPL_Pure_EMS/releases/download/v0.2.5/app-release.apk "下载地址") / [release](https://github.com/dream2333/NWUPL_Pure_EMS/releases "下载地址")
 
 个人开发的一款西北政法大学教务平台客户端，遵循Material Design标准，使用kotlin+jetpack+mvvm架构，查询流量消耗为网页端的1/100。可以使用西北政法大学教务端学号及密码进行登录，能够替代西北政法大学网页端教务平台的部分功能，实现教务的便捷查询。
 
-使用学号+身份证后六位登录
+0.3.0版本 使用学号+密码登录（树维教务平台登录）
+~~0.2.5版本 使用学号+身份证后六位登录（西北政法大学门户登录）~~
+~~谷歌的jetpack 和kotlin api变化也太快了，有没有hxd帮忙重构一下页面啊~~
 
 ## 已实现功能
 
@@ -20,7 +22,7 @@
 
 ## 数维登录请求流程
 
-[教务接口说明](https://github.com/dream2333/NWUPL_Pure_EMS/blob/master/%E6%8E%A5%E5%8F%A3.md "接口文档") 
+[教务接口说明](https://github.com/dream2333/NWUPL_Pure_EMS/blob/master/%E6%8E%A5%E5%8F%A3.md "接口文档")
 
 - 获取jessionid
 
